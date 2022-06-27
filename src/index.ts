@@ -1,14 +1,13 @@
-import { resolve as resolvePackagePath } from 'mlly'
+import Pool from 'tinypool'
+import type { GetExportsOptions } from './types'
 
-export interface GetExportsOptions {
-  url?: string
-}
+let _worker: Pool | undefined
 
 export async function getExports(name: string, options?: GetExportsOptions) {
-  const path = await resolvePackagePath(name, { url: options?.url })
-  const pkg = await import(path)
-  const keys = Object.keys(pkg)
-  if (keys.length === 1 && keys[0] === 'default')
-    return Object.keys(pkg.default)
-  return keys
+  if (!_worker) {
+    _worker = new Pool({
+      filename: new URL('./worker.js', import.meta.url).href,
+    })
+  }
+  return await _worker.run({ name, options })
 }

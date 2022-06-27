@@ -1,6 +1,6 @@
 import { resolve as resolvePackagePath } from 'mlly'
 import { describe, expect, it } from 'vitest'
-import { getExports } from '../src'
+import { getExports } from '../dist'
 
 describe('ESM', () => {
   it('@antfu/utils', async () => {
