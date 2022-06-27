@@ -16,6 +16,22 @@ describe('ESM', () => {
       `)
   })
 
+  it('vue', async () => {
+    const exports = (await getExportsRuntime('vue'))
+    expect(exports.slice(0, 5))
+      .toMatchInlineSnapshot(`
+        [
+          "BaseTransition",
+          "Comment",
+          "EffectScope",
+          "Fragment",
+          "KeepAlive",
+        ]
+      `)
+
+    expect(exports).toContain('ref')
+  })
+
   it('@vue/shared', async () => {
     expect((await getExportsRuntime('@vue/shared', {
       url: await resolvePackagePath('vue'),
