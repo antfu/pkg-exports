@@ -2,6 +2,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/pkg-exports?color=a1b858&label=)](https://www.npmjs.com/package/pkg-exports)
 
+**WIP**
+
 Get exports of an local npm package.
 
 ## Sponsors
