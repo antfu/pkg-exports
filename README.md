@@ -19,7 +19,7 @@ Get the exports by evaluate the module in worker thread.
 ```ts
 import { getExportsRuntime } from 'pkg-exports'
 
-const exports = getExportsRuntime('vue')
+const exports = await getExportsRuntime('vue')
 console.log(exports) // ['ref', 'computed', ...]
 ```
 
@@ -31,7 +31,7 @@ Get the exports by static analysis (only work with ESM). **Experimental**.
 ```ts
 import { getExportsStatic } from 'pkg-exports'
 
-const exports = getExportsStatic('vue')
+const exports = await getExportsStatic('vue')
 console.log(exports) // ['ref', 'computed', ...]
 ```
 
