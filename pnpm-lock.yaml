@@ -12,6 +12,7 @@ importers:
       bumpp: ^8.2.1
       eslint: ^8.18.0
       esno: ^0.16.3
+      local-pkg: ^0.4.1
       mlly: ^0.5.3
       pnpm: ^7.2.1
       react: ^18.2.0
@@ -23,6 +24,7 @@ importers:
       vitest: ^0.15.1
       vue: ^3.2.37
     dependencies:
+      local-pkg: 0.4.1
       mlly: 0.5.3
       tinypool: 0.2.1
       tsup: 6.1.2_typescript@4.7.4
@@ -2090,7 +2092,6 @@ packages:
   /local-pkg/0.4.1:
     resolution: {integrity: sha512-lL87ytIGP2FU5PWwNDo0w3WhIo2gopIAxPg9RxDYF7m4rr5ahuZxP22xnJHIvaLTe4Z9P6uKKY2UHiwyB4pcrw==}
     engines: {node: '>=14'}
-    dev: true
 
   /locate-path/2.0.0:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==}
