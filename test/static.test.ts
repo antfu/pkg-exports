@@ -28,7 +28,7 @@ describe('ESM', () => {
         ]
       `)
 
-    // TODO:
+    // TODO: await https://github.com/unjs/mlly/pull/55
     // expect(exports).toContain('ref')
   })
 })
