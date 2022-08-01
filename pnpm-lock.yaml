@@ -26,6 +26,7 @@ importers:
     dependencies:
       local-pkg: 0.4.1
       mlly: 0.5.3
+      tinypool: 0.2.1
     devDependencies:
       '@antfu/eslint-config': 0.25.1_b5e7v2qnwxfo6hmiq56u52mz3e
       '@antfu/ni': 0.16.2
@@ -38,7 +39,6 @@ importers:
       pnpm: 7.2.1
       react: 18.2.0
       rimraf: 3.0.2
-      tinypool: 0.2.1
       tsup: 6.1.2_typescript@4.7.4
       typescript: 4.7.4
       vite: 2.9.12
@@ -2951,7 +2951,7 @@ packages:
   /tinypool/0.2.1:
     resolution: {integrity: sha512-HFU5ZYVq3wBfhSaf8qdqGsneaqXm0FgJQpoUlJbVdHpRLzm77IneKAD3RjzJWZvIv0YpPB9S7LUW53f6BE6ZSg==}
     engines: {node: '>=14.0.0'}
-    dev: true
+    dev: false
 
   /tinyspy/0.3.2:
     resolution: {integrity: sha512-2+40EP4D3sFYy42UkgkFFB+kiX2Tg3URG/lVvAZFfLxgGpnWl5qQJuBw1gaLttq8UOS+2p3C0WrhJnQigLTT2Q==}
