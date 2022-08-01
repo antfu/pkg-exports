@@ -2,7 +2,7 @@
   "name": "pkg-exports",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.2.1",
+  "packageManager": "pnpm@7.8.0",
   "description": "",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
@@ -47,26 +47,26 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "local-pkg": "^0.4.1",
-    "mlly": "^0.5.3",
-    "tinypool": "^0.2.1"
+    "local-pkg": "^0.4.2",
+    "mlly": "^0.5.5",
+    "tinypool": "^0.2.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.25.1",
-    "@antfu/ni": "^0.16.2",
+    "@antfu/eslint-config": "^0.25.2",
+    "@antfu/ni": "^0.17.2",
     "@antfu/utils": "^0.5.2",
-    "@types/node": "^18.0.0",
+    "@types/node": "^18.6.3",
     "axios": "^0.27.2",
     "bumpp": "^8.2.1",
-    "eslint": "^8.18.0",
+    "eslint": "^8.21.0",
     "esno": "^0.16.3",
-    "pnpm": "^7.2.1",
+    "pnpm": "^7.8.0",
     "react": "^18.2.0",
     "rimraf": "^3.0.2",
-    "tsup": "^6.1.2",
+    "tsup": "^6.2.1",
     "typescript": "^4.7.4",
-    "vite": "^2.9.12",
-    "vitest": "^0.15.1",
+    "vite": "^3.0.4",
+    "vitest": "^0.20.2",
     "vue": "^3.2.37"
   }
 }
