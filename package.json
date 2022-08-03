@@ -13,7 +13,7 @@
     "url": "git+https://github.com/antfu/pkg-exports.git"
   },
   "bugs": "https://github.com/antfu/pkg-exports/issues",
-  "keywords": [],
+  "keywords": ["package", "export", "pkg"],
   "sideEffects": false,
   "exports": {
     ".": {
