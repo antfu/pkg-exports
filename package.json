@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "local-pkg": "^0.4.2",
-    "mlly": "^0.5.5",
+    "mlly": "^0.5.7",
     "tinypool": "^0.2.4"
   },
   "devDependencies": {
