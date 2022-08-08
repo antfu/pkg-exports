@@ -50,5 +50,5 @@ export async function getExportsStatic(name: string, options?: GetExportsOptions
       .flat()
   }
 
-  return getExportsRelative(name, options?.url)
+  return (await getExportsRelative(name, options?.url)).sort()
 }

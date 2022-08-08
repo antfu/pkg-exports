@@ -8,5 +8,5 @@ export default async function getExports({ name, options }: { name: string; opti
   const keys = Object.keys(pkg)
   if (interop && keys.length === 1 && keys[0] === 'default')
     return Object.keys(pkg.default)
-  return keys
+  return keys.sort()
 }

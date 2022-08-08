@@ -3,7 +3,8 @@ import { getExportsStatic } from '../src'
 
 describe('ESM', () => {
   it('@antfu/utils', async () => {
-    expect((await getExportsStatic('@antfu/utils')).slice(0, 5))
+    const exports = await getExportsStatic('@antfu/utils')
+    expect(exports.slice(0, 5))
       .toMatchInlineSnapshot(`
         [
           "assert",
@@ -16,19 +17,21 @@ describe('ESM', () => {
   })
 
   it('vue', async () => {
-    const exports = (await getExportsStatic('vue'))
+    const exports = await getExportsStatic('vue')
     expect(exports.slice(0, 5))
       .toMatchInlineSnapshot(`
         [
-          "compile",
-          "Transition",
-          "TransitionGroup",
-          "VueElement",
-          "createApp",
+          "BaseTransition",
+          "Comment",
+          "EffectScope",
+          "Fragment",
+          "KeepAlive",
         ]
       `)
 
-    // TODO: await https://github.com/unjs/mlly/pull/55
-    // expect(exports).toContain('ref')
+    expect(exports).toContain('ref')
+    expect(exports).toContain('effectScope')
+    expect(exports).toContain('watch')
+    expect(exports).toContain('defineComponent')
   })
 })

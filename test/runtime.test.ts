@@ -30,6 +30,9 @@ describe('ESM', () => {
       `)
 
     expect(exports).toContain('ref')
+    expect(exports).toContain('effectScope')
+    expect(exports).toContain('watch')
+    expect(exports).toContain('defineComponent')
   })
 
   it('@vue/shared', async () => {
