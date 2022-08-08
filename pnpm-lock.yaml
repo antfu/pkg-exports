@@ -13,7 +13,7 @@ importers:
       eslint: ^8.21.0
       esno: ^0.16.3
       local-pkg: ^0.4.2
-      mlly: ^0.5.5
+      mlly: ^0.5.7
       pnpm: ^7.8.0
       react: ^18.2.0
       rimraf: ^3.0.2
@@ -25,7 +25,7 @@ importers:
       vue: ^3.2.37
     dependencies:
       local-pkg: 0.4.2
-      mlly: 0.5.5
+      mlly: 0.5.7
       tinypool: 0.2.4
     devDependencies:
       '@antfu/eslint-config': 0.25.2_qugx7qdu5zevzvxaiqyxfiwquq
@@ -553,7 +553,6 @@ packages:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
   /ajv/6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -2533,10 +2532,11 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
-  /mlly/0.5.5:
-    resolution: {integrity: sha512-2R4JT/SxRDPexomw4rmHYY/gWAGmL9Kkq1OR76Ua6w+P340a1aBDTWzKo2kAlxzrG82OdXs5VB9Lmcmyit0Obg==}
+  /mlly/0.5.7:
+    resolution: {integrity: sha512-rz+n2i9862ymLH+UDlHpsuTVyCIAs+9WejS2De2VUlAKdpq8OJ9x/C2M7nNUMLEW1H+D6n0uZlpz8+tMGxCmyQ==}
     dependencies:
-      pathe: 0.3.2
+      acorn: 8.8.0
+      pathe: 0.3.3
       pkg-types: 0.3.3
     dev: false
 
@@ -2785,8 +2785,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /pathe/0.3.2:
-    resolution: {integrity: sha512-qhnmX0TOqlCvdWWTkoM83wh5J8fZ2yhbDEc9MlsnAEtEc+JCwxUKEwmd6pkY9hRe6JR1Uecbc14VcAKX2yFSTA==}
+  /pathe/0.3.3:
+    resolution: {integrity: sha512-x3nrPvG0HDSDzUiJ0WqtzhN4MD+h5B+dFJ3/qyxVuARlr4Y3aJv8gri2cZzp9Z8sGs2a+aG9gNbKngh3gme57A==}
     dev: false
 
   /pathval/1.1.1:
@@ -2811,8 +2811,8 @@ packages:
     resolution: {integrity: sha512-6AJcCMnjUQPQv/Wk960w0TOmjhdjbeaQJoSKWRQv9N3rgkessCu6J0Ydsog/nw1MbpnxHuPzYbfOn2KmlZO1FA==}
     dependencies:
       jsonc-parser: 3.0.0
-      mlly: 0.5.5
-      pathe: 0.3.2
+      mlly: 0.5.7
+      pathe: 0.3.3
     dev: false
 
   /pluralize/8.0.0:
