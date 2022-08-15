@@ -34,4 +34,21 @@ describe('ESM', () => {
     expect(exports).toContain('watch')
     expect(exports).toContain('defineComponent')
   })
+
+  it('naive-ui', async () => {
+    const exports = await getExportsStatic('naive-ui')
+    expect(exports.slice(0, 5))
+      .toMatchInlineSnapshot(`
+        [
+          "NA",
+          "NAffix",
+          "NAlert",
+          "NAnchor",
+          "NAnchorLink",
+        ]
+      `)
+
+    expect(exports).toContain('useMessage')
+    expect(exports).toContain('createDiscreteApi')
+  })
 })
