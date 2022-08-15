@@ -1,22 +1,24 @@
 import { promises as fs } from 'fs'
 import { fileURLToPath, pathToFileURL } from 'url'
 import { resolve } from 'path'
-import { findExports, resolve as resolvePackagePath } from 'mlly'
+import { findExports, resolve as resolvePath } from 'mlly'
 import { getPackageInfo } from 'local-pkg'
 import type { GetExportsOptions } from './types'
 
 export async function getExportsStatic(name: string, options?: GetExportsOptions) {
   const map = new Map<string, Promise<string[]>>()
 
-  async function resolvePackageEntry(name: string, importer?: string) {
-    try {
-      const { rootPath, packageJson } = (await getPackageInfo(name, { paths: importer ? [fileURLToPath(importer)] : undefined }))!
-      if (!packageJson.exports && packageJson.module)
-        return pathToFileURL(resolve(rootPath, packageJson.module)).href
+  async function resolveEntry(name: string, importer?: string) {
+    if (name.match(/^[@a-z0-9]/)) {
+      try {
+        const { rootPath, packageJson } = (await getPackageInfo(name, { paths: importer ? [fileURLToPath(importer)] : undefined }))!
+        if (!packageJson.exports && packageJson.module)
+          return pathToFileURL(resolve(rootPath, packageJson.module)).href
+      }
+      catch {}
     }
-    catch {}
 
-    return await resolvePackagePath(name, {
+    return await resolvePath(name, {
       url: importer,
       extensions: ['.mjs', '.js'],
       conditions: ['module', 'import', 'require', 'default'],
@@ -24,9 +26,7 @@ export async function getExportsStatic(name: string, options?: GetExportsOptions
   }
 
   async function getExportsRelative(relative: string, importer?: string): Promise<string[]> {
-    const url = relative.match(/^[@a-z0-9]/)
-      ? await resolvePackageEntry(relative, importer)
-      : new URL(relative, importer).href
+    const url = await resolveEntry(relative, importer)
 
     return getExportsUrl(url)
   }
