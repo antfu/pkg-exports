@@ -10,8 +10,8 @@ describe('ESM', () => {
           "assert",
           "at",
           "batchInvoke",
+          "capitalize",
           "clamp",
-          "clampArrayRange",
         ]
       `)
   })
@@ -22,10 +22,10 @@ describe('ESM', () => {
       .toMatchInlineSnapshot(`
         [
           "BaseTransition",
+          "BaseTransitionPropsValidators",
           "Comment",
           "EffectScope",
           "Fragment",
-          "KeepAlive",
         ]
       `)
 

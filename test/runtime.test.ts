@@ -10,8 +10,8 @@ describe('ESM', () => {
           "assert",
           "at",
           "batchInvoke",
+          "capitalize",
           "clamp",
-          "clampArrayRange",
         ]
       `)
   })
@@ -22,10 +22,10 @@ describe('ESM', () => {
       .toMatchInlineSnapshot(`
         [
           "BaseTransition",
+          "BaseTransitionPropsValidators",
           "Comment",
           "EffectScope",
           "Fragment",
-          "KeepAlive",
         ]
       `)
 
@@ -57,11 +57,11 @@ describe('CJS', () => {
     expect((await getExportsRuntime('axios')).slice(0, 5))
       .toMatchInlineSnapshot(`
         [
-          "request",
-          "getUri",
-          "delete",
-          "get",
-          "head",
+          "Axios",
+          "AxiosError",
+          "AxiosHeaders",
+          "Cancel",
+          "CancelToken",
         ]
       `)
   })
