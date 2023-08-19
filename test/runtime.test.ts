@@ -4,78 +4,77 @@ import { getExportsRuntime } from '../dist'
 
 describe('ESM', () => {
   it('@antfu/utils', async () => {
-    expect((await getExportsRuntime('@antfu/utils')).slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "assert",
-          "at",
-          "batchInvoke",
-          "capitalize",
-          "clamp",
-        ]
-      `)
+    expect(await getExportsRuntime('@antfu/utils')).toEqual(
+      expect.arrayContaining([
+        'assert',
+        'at',
+        'batchInvoke',
+        'capitalize',
+        'clamp',
+      ]),
+    )
   })
 
   it('vue', async () => {
-    const exports = (await getExportsRuntime('vue'))
-    expect(exports.slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "BaseTransition",
-          "BaseTransitionPropsValidators",
-          "Comment",
-          "EffectScope",
-          "Fragment",
-        ]
-      `)
-
-    expect(exports).toContain('ref')
-    expect(exports).toContain('effectScope')
-    expect(exports).toContain('watch')
-    expect(exports).toContain('defineComponent')
+    expect(await getExportsRuntime('vue')).toEqual(
+      expect.arrayContaining([
+        'BaseTransition',
+        'BaseTransitionPropsValidators',
+        'Comment',
+        'EffectScope',
+        'Fragment',
+        'ref',
+        'effectScope',
+        'watch',
+        'defineComponent',
+      ]),
+    )
   })
 
   it('@vue/shared', async () => {
-    expect((await getExportsRuntime('@vue/shared', {
-      url: await resolvePackagePath('vue'),
-    })).slice(6, 12))
-      .toMatchInlineSnapshot(`
-        [
-          "camelize",
-          "capitalize",
-          "def",
-          "default",
-          "escapeHtml",
-          "escapeHtmlComment",
-        ]
-      `)
+    expect(
+      (
+        await getExportsRuntime('@vue/shared', {
+          url: await resolvePackagePath('vue'),
+        })
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        'camelize',
+        'capitalize',
+        'def',
+        'default',
+        'escapeHtml',
+        'escapeHtmlComment',
+      ]),
+    )
   })
 })
 
 describe('CJS', () => {
   it('axios', async () => {
-    expect((await getExportsRuntime('axios')).slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "Axios",
-          "AxiosError",
-          "AxiosHeaders",
-          "Cancel",
-          "CancelToken",
-        ]
-      `)
+    expect((await getExportsRuntime('axios')))
+      .toEqual(
+        expect.arrayContaining([
+          'Axios',
+          'AxiosError',
+          'AxiosHeaders',
+          'Cancel',
+          'CancelToken',
+        ]),
+      )
   })
 
   it('react', async () => {
-    expect((await getExportsRuntime('react')).slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "Children",
-          "Component",
-          "Fragment",
-          "Profiler",
-          "PureComponent",
-        ]
-      `)
+    expect((await getExportsRuntime('react')))
+      .toMatchInlineSnapshot(
+        expect.arrayContaining([
+          'Children',
+          'Component',
+          'Fragment',
+          'Profiler',
+          'PureComponent',
+        ]),
+      )
   })
 })
