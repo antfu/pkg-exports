@@ -33,11 +33,9 @@ describe('ESM', () => {
 
   it('@vue/shared', async () => {
     expect(
-      (
-        await getExportsRuntime('@vue/shared', {
-          url: await resolvePackagePath('vue'),
-        })
-      ),
+      await getExportsRuntime('@vue/shared', {
+        url: await resolvePackagePath('vue'),
+      }),
     ).toEqual(
       expect.arrayContaining([
         'camelize',
@@ -53,28 +51,26 @@ describe('ESM', () => {
 
 describe('CJS', () => {
   it('axios', async () => {
-    expect((await getExportsRuntime('axios')))
-      .toEqual(
-        expect.arrayContaining([
-          'Axios',
-          'AxiosError',
-          'AxiosHeaders',
-          'Cancel',
-          'CancelToken',
-        ]),
-      )
+    expect(await getExportsRuntime('axios')).toEqual(
+      expect.arrayContaining([
+        'Axios',
+        'AxiosError',
+        'AxiosHeaders',
+        'Cancel',
+        'CancelToken',
+      ]),
+    )
   })
 
   it('react', async () => {
-    expect((await getExportsRuntime('react')))
-      .toMatchInlineSnapshot(
-        expect.arrayContaining([
-          'Children',
-          'Component',
-          'Fragment',
-          'Profiler',
-          'PureComponent',
-        ]),
-      )
+    expect(await getExportsRuntime('react')).toEqual(
+      expect.arrayContaining([
+        'Children',
+        'Component',
+        'Fragment',
+        'Profiler',
+        'PureComponent',
+      ]),
+    )
   })
 })

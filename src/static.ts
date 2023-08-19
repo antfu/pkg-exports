@@ -9,7 +9,7 @@ export async function getExportsStatic(name: string, options?: GetExportsOptions
   const map = new Map<string, Promise<string[]>>()
 
   async function resolveEntry(name: string, importer?: string) {
-    if (name.match(/^[a-z0-9-._~]/)) {
+    if (name.match(/^[a-z0-9-._~@]/)) {
       try {
         const { rootPath, packageJson } = (await getPackageInfo(name, { paths: importer ? [fileURLToPath(importer)] : undefined }))!
         if (!packageJson.exports && packageJson.module)
@@ -18,10 +18,10 @@ export async function getExportsStatic(name: string, options?: GetExportsOptions
       catch {}
     }
 
-    return await resolvePath(name, {
+    return resolvePath(name, {
       url: importer,
       extensions: ['.mjs', '.js'],
-      conditions: ['module', 'import', 'require', 'default'],
+      conditions: ['module', 'import', 'default'],
     })
   }
 

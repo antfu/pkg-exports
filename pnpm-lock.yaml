@@ -4,71 +4,69 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
+dependencies:
+  local-pkg:
+    specifier: ^0.4.3
+    version: 0.4.3
+  mlly:
+    specifier: ^1.4.0
+    version: 1.4.0
+  tinypool:
+    specifier: ^0.8.0
+    version: 0.8.0
 
-  .:
-    dependencies:
-      local-pkg:
-        specifier: ^0.4.3
-        version: 0.4.3
-      mlly:
-        specifier: ^1.4.0
-        version: 1.4.0
-      tinypool:
-        specifier: ^0.8.0
-        version: 0.8.0
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^0.40.2
-        version: 0.40.2(eslint@8.47.0)(typescript@5.1.6)
-      '@antfu/ni':
-        specifier: ^0.21.5
-        version: 0.21.5
-      '@antfu/utils':
-        specifier: ^0.7.6
-        version: 0.7.6
-      '@types/node':
-        specifier: ^20.5.1
-        version: 20.5.1
-      axios:
-        specifier: ^1.4.0
-        version: 1.4.0
-      bumpp:
-        specifier: ^9.1.1
-        version: 9.1.1
-      eslint:
-        specifier: ^8.47.0
-        version: 8.47.0
-      esno:
-        specifier: ^0.17.0
-        version: 0.17.0
-      naive-ui:
-        specifier: ^2.34.4
-        version: 2.34.4(vue@3.3.4)
-      pnpm:
-        specifier: ^8.6.12
-        version: 8.6.12
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      rimraf:
-        specifier: ^5.0.1
-        version: 5.0.1
-      tsup:
-        specifier: ^7.2.0
-        version: 7.2.0(typescript@5.1.6)
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
-      vite:
-        specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.1)
-      vitest:
-        specifier: ^0.34.2
-        version: 0.34.2
-      vue:
-        specifier: ^3.3.4
-        version: 3.3.4
+devDependencies:
+  '@antfu/eslint-config':
+    specifier: ^0.40.2
+    version: 0.40.2(eslint@8.47.0)(typescript@5.1.6)
+  '@antfu/ni':
+    specifier: ^0.21.5
+    version: 0.21.5
+  '@antfu/utils':
+    specifier: ^0.7.6
+    version: 0.7.6
+  '@types/node':
+    specifier: ^20.5.1
+    version: 20.5.1
+  axios:
+    specifier: ^1.4.0
+    version: 1.4.0
+  bumpp:
+    specifier: ^9.1.1
+    version: 9.1.1
+  eslint:
+    specifier: ^8.47.0
+    version: 8.47.0
+  esno:
+    specifier: ^0.17.0
+    version: 0.17.0
+  naive-ui:
+    specifier: ^2.34.4
+    version: 2.34.4(vue@3.3.4)
+  pnpm:
+    specifier: ^8.6.12
+    version: 8.6.12
+  react:
+    specifier: ^18.2.0
+    version: 18.2.0
+  rimraf:
+    specifier: ^5.0.1
+    version: 5.0.1
+  tsup:
+    specifier: ^7.2.0
+    version: 7.2.0(typescript@5.1.6)
+  typescript:
+    specifier: ^5.1.6
+    version: 5.1.6
+  vite:
+    specifier: ^4.4.9
+    version: 4.4.9(@types/node@20.5.1)
+  vitest:
+    specifier: ^0.34.2
+    version: 0.34.2
+  vue:
+    specifier: ^3.3.4
+    version: 3.3.4
 
 packages:
 

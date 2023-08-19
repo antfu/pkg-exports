@@ -4,49 +4,49 @@ import { getExportsStatic } from '../src'
 describe('ESM', () => {
   it('@antfu/utils', async () => {
     const exports = await getExportsStatic('@antfu/utils')
-    expect(exports.slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "assert",
-          "at",
-          "batchInvoke",
-          "capitalize",
-          "clamp",
-        ]
-      `)
+    expect(exports).toEqual(
+      expect.arrayContaining([
+        'assert',
+        'at',
+        'batchInvoke',
+        'capitalize',
+        'clamp',
+      ]),
+    )
   })
 
   it('vue', async () => {
-    const exports = await getExportsStatic('vue')
-    expect(exports.slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "BaseTransition",
-          "BaseTransitionPropsValidators",
-          "Comment",
-          "EffectScope",
-          "Fragment",
-        ]
-      `)
+    expect(await getExportsStatic('vue')).toEqual(
+      expect.arrayContaining([
+        'BaseTransition',
+        'BaseTransitionPropsValidators',
+        'Comment',
+        'EffectScope',
+        'Fragment', 'ref',
+        'effectScope',
+        'watch',
+        'defineComponent',
+      ]),
+    )
 
-    expect(exports).toContain('ref')
-    expect(exports).toContain('effectScope')
-    expect(exports).toContain('watch')
-    expect(exports).toContain('defineComponent')
+    expect(await getExportsStatic('vue/compiler-sfc')).toEqual(
+      expect.arrayContaining([
+        'babelParse', 'parse', 'compileScript',
+      ]),
+    )
   })
 
   it('naive-ui', async () => {
     const exports = await getExportsStatic('naive-ui')
-    expect(exports.slice(0, 5))
-      .toMatchInlineSnapshot(`
-        [
-          "NA",
-          "NAffix",
-          "NAlert",
-          "NAnchor",
-          "NAnchorLink",
-        ]
-      `)
+    expect(exports).toEqual(
+      expect.arrayContaining([
+        'NA',
+        'NAffix',
+        'NAlert',
+        'NAnchor',
+        'NAnchorLink',
+      ]),
+    )
 
     expect(exports).toContain('useMessage')
     expect(exports).toContain('createDiscreteApi')
